@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>BTM</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="{{ url_for('static', filename='css/main.css') }}">
+    <script src='main.js'></script>
+</head>
+<body>
+    <div class="register_page">
+        <h1>BTM durante o treino</h1>
+        <div class="form">
+            <form action="{{url_for('predict')}}" method="POST">
+                Peso: <input type="number" name='Weight' placeholder="Digite seu peso em (kg)"><br>
+                Altura: <input type="number" name='Height' placeholder="Digite sua altura em (m)"><br>
+                BTM fora do treino: <input type="number" name='Resting_BPM' placeholder="Digite seu numero de batimentos por minuto fora de treino"><br>
+                Duração do treino em Horas: <input type="number" name='Session_Duration' placeholder="Quantas horas por dia você treina"><br>
+                <input type="submit" value="Calcular" class="submit">
+            </form>
+            <p>Seus batimentos por minuto durante o treino são de: <span>{{data}}</span></p>
+        </div>
+    </div>
+</body>
+</html>
